@@ -65,6 +65,25 @@
   }
 }
 
+.swiper-slide-active,
+.swiper-slide-next {
+  .slider__item-text {
+    animation-name: textFadeIn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+
+    @keyframes textFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 .slider__item-title {
   margin: 0 0 0 -5.5rem;
   text-transform: uppercase;
