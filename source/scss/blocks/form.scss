@@ -30,6 +30,7 @@
 }
 
 .form__field {
+  transform: translateX(-10000px);
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
@@ -43,6 +44,18 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
+  animation-name: moveField;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+
+  @keyframes moveField {
+    0% {
+      transform: translateX(-10000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
 
   &:focus {
     border: 1px solid $c-purple;

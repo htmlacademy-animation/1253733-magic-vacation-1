@@ -243,14 +243,17 @@
     padding: 0 0.5em 0.5em;
 
     &::after {
+      //линия
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
       height: 2px;
       background-color: $c-light;
-      display: none;
+      width: 0px;
       left: 0;
+      transition-property: width;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -267,18 +270,24 @@
 
     &.active {
       &::after {
-        display: block;
+        width: 0px;
       }
     }
 
     &:hover,
     &:focus {
       color: $c-purple;
+      transition-property: color;
+      transition-timing-function: ease;
+      transition-duration: 0.3s;
       outline: none;
 
       &::after {
         opacity: 1;
         background-color: $c-purple;
+        width: 100%;
+        right: auto;
+        left: 0;
       }
     }
   }
