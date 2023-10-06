@@ -1,0 +1,40 @@
+.active {
+  .page-header__logo,
+  .page-header__nav,
+  .screen__footer,
+  .intro__message p {
+    opacity: 1;
+    transition: 0.7s;
+    transition-timing-function: cubic-bezier(cubic-bezier(0, 0.4, 0.19, 1.03));
+  }
+
+  .page-header__logo {
+    transform: translateX(40%);
+  }
+
+  .screen__footer {
+    transform: translateY(-100%);
+  }
+
+  .page-header__nav {
+    a.active {
+      &::after {
+        opacity: 1;
+        background-color: $c-light;
+        width: 100%;
+        right: auto;
+        left: 0;
+      }
+    }
+    a.after {
+      width: 0px;
+    }
+  }
+  .intro__message {
+    p {
+      transform: translateY(-40%);
+      transition-delay: 1s;
+      transition-duration: 1s;
+    }
+  }
+}
