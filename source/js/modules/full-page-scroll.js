@@ -8,6 +8,9 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.overlayBlock = document.querySelector(`.overlay-block`);
+    this.storyDisplayTransition = false;
+
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -51,7 +54,7 @@ export default class FullPageScroll {
     this.emitChangeDisplayEvent();
   }
 
-  changeVisibilityDisplay() {
+  changeAllVisibilityScreen() {
     this.screenElements.forEach((screen) => {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
@@ -60,6 +63,24 @@ export default class FullPageScroll {
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
+  }
+
+  changeVisibilityDisplay() {
+    if (this.screenElements[this.activeScreen].id === `story`) {
+      this.overlayBlock.classList.remove(`overlay-block--show`);
+      this.storyDisplayTransition = true;
+      this.changeAllVisibilityScreen();
+    } else if (this.screenElements[this.activeScreen].id === `prizes` && this.storyDisplayTransition) {
+      this.overlayBlock.classList.add(`overlay-block--show`);
+      setTimeout(() => {
+        this.changeAllVisibilityScreen();
+      }, 400);
+      this.storyDisplayTransition = false;
+    } else {
+      this.overlayBlock.classList.remove(`overlay-block--show`);
+      this.storyDisplayTransition = false;
+      this.changeAllVisibilityScreen();
+    }
   }
 
   changeActiveMenuItem() {
