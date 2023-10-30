@@ -1,0 +1,93 @@
+.active {
+  .page-header__logo,
+  .page-header__nav,
+  .screen__footer,
+  .intro__message p {
+    opacity: 1;
+    transition: 0.7s;
+    transition-timing-function: cubic-bezier(cubic-bezier(0, 0.4, 0.19, 1.03));
+  }
+
+  .page-header__logo {
+    transform: translateX(0%);
+  }
+
+  .screen__footer {
+    transform: translateY(0%);
+  }
+
+  .page-header__nav {
+    a.active {
+      &::after {
+        opacity: 1;
+        background-color: $c-light;
+        width: 100%;
+        right: auto;
+        left: 0;
+      }
+    }
+    a.after {
+      width: 0px;
+    }
+  }
+  .intro__message {
+    p {
+      transform: translateY(0%);
+      transition-duration: 1s;
+    }
+  }
+  .rules__item {
+    opacity: 1;
+    &::before {
+      animation-name: transitionFromOpacity, bullitAnimationTransition;
+      animation-timing-function: $bounceAnimation, $bounceAnimation;
+      animation-duration: 1s, 1s;
+      animation-fill-mode: forwards;
+    }
+    &:nth-child(1)::before {
+      animation-name: transitionFromOpacity, bullitAnimationTransition;
+      animation-timing-function: $bounceAnimation, $bounceAnimation;
+      animation-duration: 0.8s, 0.8s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(2)::before {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(3)::before {
+      animation-delay: 0.6s;
+    }
+
+    &:nth-child(4)::before {
+      animation-delay: 0.8s;
+    }
+
+    p {
+      animation-name: moveToLeft, transitionFromOpacity;
+      animation-duration: 1s, 1s;
+      animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation-fill-mode: forwards;
+    }
+    &:nth-child(1) p {
+      animation-delay: 0.4s, 0.4s;
+    }
+    &:nth-child(2) p {
+      animation-delay: 0.6s, 0.6s;
+    }
+    &:nth-child(3) p {
+      animation-delay: 0.8s, 0.8s;
+    }
+    &:nth-child(4) p {
+      animation-delay: 1s, 1s;
+    }
+  }
+  .rules__link {
+    animation-name: transitionFromOpacity, growSizeTransition,
+      transitionСolorBtn;
+    animation-duration: 1s, 1s, 1s;
+    animation-delay: 1.3s, 1.3s, 2s;
+    animation-fill-mode: forwards;
+  }
+}
