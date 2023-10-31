@@ -1,0 +1,44 @@
+@keyframes transitionFromOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bullitAnimationTransition {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes moveToLeft {
+  0% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes growSizeTransition {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+@keyframes transitionСolorBtn {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: $c-dark;
+  }
+}
