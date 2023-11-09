@@ -1,0 +1,56 @@
+.screen--show {
+  .prize-img--sut {
+    animation-name: moveToUp, growSizeImg;
+    animation-duration: $middleAnimation, $middleAnimation;
+    animation-fill-mode: forwards;
+    transition-timing-function: $bounceAnimation;
+  }
+  .prize-img--bird {
+    animation-name: moveToUp, flamingoAnimation;
+    animation-duration: $middleAnimation, $veryLongAnimation;
+    animation-delay: 0s, 0.6s;
+    animation-fill-mode: forwards, forwards;
+    transition-timing-function: linear, $smooth;
+  }
+
+  .prize-img--leaf2 {
+    animation-name: transitionFromOpacity, swingLeaf2;
+    animation-duration: $shotAnimation, $longAnimation;
+    transition-timing-function: $bounceAnimation, $fastToSlow;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards, forwards;
+    animation-iteration-count: initial, 1;
+  }
+  .prize-img--leaf1 {
+    animation-name: transitionFromOpacity, swingLeaf;
+    animation-duration: $shotAnimation, $longAnimation;
+    transition-timing-function: $bounceAnimation, $fastToSlow;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards, forwards;
+    animation-iteration-count: initial, 1;
+  }
+  .prize-img--green {
+    animation-name: transitionFromOpacity, swingLeaf;
+    animation-duration: $shotAnimation, $longAnimation;
+    transition-timing-function: $bounceAnimation, $fastToSlow;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards, forwards;
+    animation-iteration-count: initial, 1;
+  }
+  .result__form button {
+    animation-name: transitionFromOpacity, transitionСolorBtn;
+    animation-duration: $shotAnimation, $middleAnimation;
+    transition-timing-function: $bounceAnimation, $bounceAnimation;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 0.8s;
+  }
+
+  .result__form {
+    #email-field2 {
+      animation-name: transitionFromOpacity, growSizeForm;
+      animation-duration: $shotAnimation, $middleAnimation;
+      animation-delay: 1s, 1s;
+      animation-fill-mode: forwards, forwards;
+    }
+  }
+}

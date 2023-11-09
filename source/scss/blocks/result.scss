@@ -33,24 +33,68 @@
   justify-content: center;
   align-items: center;
   z-index: -1;
+  width: 100%;
+  height: 100%;
 
   @media (orientation: portrait) {
     left: -1rem;
     right: -1rem;
   }
 
-  picture {
+  /* picture {
     display: block;
     width: 100%;
     height: 100%;
   }
 
   img {
-    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: block;
+    object-fit: contain;
     object-position: center;
+  } */
+}
+
+.prize-img {
+  display: inline-block;
+  position: absolute;
+  background-repeat: no-repeat;
+
+  &--sut {
+    bottom: 20%;
+    z-index: 1;
+    transform: translateY(100vh) translateX(-150%);
+  }
+  &--bird {
+    z-index: 2;
+    width: 30vh;
+    right: 46%;
+    bottom: 18%;
+    transform: translateY(100vh);
+  }
+  &--leaf1 {
+    opacity: 0;
+    left: 50%;
+    width: 35vh;
+    top: 40%;
+    z-index: -1;
+    transform: rotate(-45deg);
+  }
+  &--leaf2 {
+    right: 51%;
+    top: 53%;
+    width: 35vh;
+    z-index: -1;
+    opacity: 0;
+    transform: rotate(30deg);
+  }
+
+  &--green {
+    width: 38vh;
+    right: 32%;
+    top: 60%;
+    opacity: 0;
   }
 }
 
@@ -211,6 +255,13 @@
 
 .result__form {
   margin-top: auto;
+}
+
+.result__form {
+  #email-field2 {
+    width: 0px;
+    opacity: 0;
+  }
 }
 
 .result--trip,

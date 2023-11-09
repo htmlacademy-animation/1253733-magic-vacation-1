@@ -18,8 +18,14 @@
 
 @keyframes moveToLeft {
   0% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveToRight {
   100% {
     transform: translateX(0);
   }
@@ -34,11 +40,88 @@
   }
 }
 
+@keyframes growSizeForm {
+  0% {
+    transform: translateX(0);
+    width: 0%;
+  }
+  100% {
+    transform: translateX(1);
+    width: calc(100% - 31rem);
+  }
+}
+
 @keyframes transitionСolorBtn {
   0% {
     color: transparent;
   }
   100% {
     color: $c-dark;
+  }
+}
+
+@keyframes moveToUp {
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes growSizeImg {
+  100% {
+    width: 40vh;
+  }
+}
+
+@keyframes swingLeaf {
+  0% {
+    transform: translateY(-60px) rotate(-30deg);
+  }
+  10% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-40px) rotate(-20deg);
+  }
+  40% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes swingLeaf2 {
+  0% {
+    transform: translateY(-60px) rotate(30deg);
+  }
+  10% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-40px) rotate(20deg);
+  }
+  40% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes flamingoAnimation {
+  0% {
+    transform: translateY(30px);
+  }
+  10% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(20px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
