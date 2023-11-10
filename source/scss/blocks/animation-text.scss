@@ -1,0 +1,11 @@
+.title-wordgap {
+  display: inline-block;
+  margin: 0 5px;
+  overflow: hidden;
+  line-height: 1;
+
+  span {
+    display: inline-block;
+    transform: translateY(100%);
+  }
+}

@@ -12,7 +12,14 @@ $wide-screen: "min-aspect-ratio: 1680/650";
 $wider: "min-aspect-ratio: 1441/760";
 $narrower: "max-aspect-ratio: 1439/760";
 
+$veryLongAnimation: 8s;
+$longAnimation: 5s;
+$middleAnimation: 1s;
+$shotAnimation: 0.3s;
+
 $bounceAnimation: cubic-bezier(0.73, 0.6, 0.32, 1.65);
+$fastToSlow: cubic-bezier(0.19, 1, 0.22, 1);
+$smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
 
 $tablet: 1024px;
 $mobile: 768px;

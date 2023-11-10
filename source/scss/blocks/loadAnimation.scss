@@ -33,7 +33,7 @@
   .intro__message {
     p {
       transform: translateY(0%);
-      transition-duration: 1s;
+      transition-duration: $middleAnimation;
     }
   }
   .rules__item {
@@ -41,13 +41,13 @@
     &::before {
       animation-name: transitionFromOpacity, bullitAnimationTransition;
       animation-timing-function: $bounceAnimation, $bounceAnimation;
-      animation-duration: 1s, 1s;
+      animation-duration: $middleAnimation, $middleAnimation;
       animation-fill-mode: forwards;
     }
     &:nth-child(1)::before {
       animation-name: transitionFromOpacity, bullitAnimationTransition;
       animation-timing-function: $bounceAnimation, $bounceAnimation;
-      animation-duration: 0.8s, 0.8s;
+      animation-duration: $middleAnimation, $middleAnimation;
       animation-fill-mode: forwards;
       animation-delay: 0.2s;
     }
@@ -66,8 +66,8 @@
 
     p {
       animation-name: moveToLeft, transitionFromOpacity;
-      animation-duration: 1s, 1s;
-      animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+      animation-duration: $middleAnimation, $middleAnimation;
+      animation-timing-function: $smooth;
       animation-fill-mode: forwards;
     }
     &:nth-child(1) p {
@@ -86,8 +86,30 @@
   .rules__link {
     animation-name: transitionFromOpacity, growSizeTransition,
       transitionСolorBtn;
-    animation-duration: 1s, 1s, 1s;
+    animation-duration: $middleAnimation, $middleAnimation, $middleAnimation;
     animation-delay: 1.3s, 1.3s, 2s;
     animation-fill-mode: forwards;
+  }
+
+  .title-wordgap {
+    span {
+      transform: translateX(0);
+    }
+  }
+  .intro__info {
+    opacity: 1;
+    .title-wordgap {
+      span {
+        transition-delay: 10s;
+      }
+    }
+  }
+
+  .chat__footer {
+    #message-field {
+      animation-name: moveToRight;
+      animation-duration: $middleAnimation;
+      animation-fill-mode: forwards;
+    }
   }
 }
