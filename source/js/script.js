@@ -46,4 +46,3 @@ setTimeout(()=>{
   animationTopTitlePrize.runAnimation();
 }, 500);
 
-

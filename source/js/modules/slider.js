@@ -3,7 +3,25 @@ import Swiper from "swiper";
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
+  let sliderColorChange = [`lilac`, `cyan`, `blue`];
+  let body = document.querySelector(`body`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
+
+
+  function changeColor(screen) {
+    body.classList.remove(...sliderColorChange);
+    if (screen !== `story`) {
+      return;
+    }
+    if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
+      body.classList.add(sliderColorChange[0]);
+    } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
+      body.classList.add(sliderColorChange[1]);
+    } else if (storySlider.activeIndex === 4 || storySlider.activeIndex === 5) {
+      body.classList.add(sliderColorChange[2]);
+    }
+  }
+
 
   const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
@@ -26,6 +44,7 @@ export default () => {
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
             }
+            changeColor(screen);
           },
           resize: () => {
             storySlider.update();

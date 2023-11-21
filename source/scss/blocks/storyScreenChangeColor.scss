@@ -1,0 +1,20 @@
+.color-change {
+  .lilac {
+    .social-block__toggler {
+      color: $c-purple;
+      &:hover {
+        color: $c-dark;
+      }
+      &:active {
+        &::before {
+          color: $c-dark;
+        }
+      }
+    }
+    .page-header__menu a {
+      &:hover {
+        color: $c-dark;
+      }
+    }
+  }
+}
