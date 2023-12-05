@@ -193,7 +193,7 @@
     height: 4rem;
     color: $c-dark;
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(100%) rotate(90deg);
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;

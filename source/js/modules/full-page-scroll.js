@@ -1,4 +1,6 @@
 import throttle from 'lodash/throttle';
+import {body} from './utils';
+import {sliderColorChange} from './utils';
 
 export default class FullPageScroll {
   constructor() {
@@ -52,6 +54,7 @@ export default class FullPageScroll {
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+    this.changeColorFirstHistoryScreen();
   }
 
   changeAllVisibilityScreen() {
@@ -63,6 +66,14 @@ export default class FullPageScroll {
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
+  }
+
+  changeColorFirstHistoryScreen() {
+    if (this.screenElements[this.activeScreen].id === `story` && this.storyDisplayTransition) {
+      body.classList.add(`lilac`);
+    } else {
+      body.classList.remove(...sliderColorChange);
+    }
   }
 
   changeVisibilityDisplay() {

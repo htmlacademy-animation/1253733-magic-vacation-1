@@ -1,18 +1,15 @@
 import Swiper from "swiper";
+import {sliderColorChange} from "./utils";
 
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
-  let sliderColorChange = [`lilac`, `cyan`, `blue`];
   let body = document.querySelector(`body`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
 
-  function changeColor(screen) {
+  function changeColor() {
     body.classList.remove(...sliderColorChange);
-    if (screen !== `story`) {
-      return;
-    }
     if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
       body.classList.add(sliderColorChange[0]);
     } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
@@ -44,7 +41,7 @@ export default () => {
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
             }
-            changeColor(screen);
+            changeColor();
           },
           resize: () => {
             storySlider.update();
@@ -79,6 +76,7 @@ export default () => {
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
+            changeColor();
           },
           resize: () => {
             storySlider.update();

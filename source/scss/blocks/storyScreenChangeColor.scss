@@ -1,19 +1,237 @@
-.color-change {
-  .lilac {
-    .social-block__toggler {
+.lilac {
+  .social-block__toggler {
+    color: $c-purple;
+    &::before {
+      color: $c-light;
+    }
+
+    &:hover {
       color: $c-purple;
-      &:hover {
-        color: $c-dark;
-      }
-      &:active {
-        &::before {
-          color: $c-dark;
-        }
+    }
+
+    &:focus {
+      color: $c-purple;
+      outline: none;
+
+      &::before {
+        border-color: $c-purple;
       }
     }
-    .page-header__menu a {
-      &:hover {
-        color: $c-dark;
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-purple;
+        border-color: $c-purple;
+      }
+    }
+  }
+  .social-block__toggler--active {
+    color: $c-purple;
+  }
+
+  .social-block__link:hover {
+    color: $c-dark;
+  }
+  .page-header__menu a {
+    &:hover,
+    &:focus {
+      color: $c-dark;
+      &::after {
+        background-color: $c-dark;
+      }
+    }
+  }
+  .slider__control,
+  .slider__control .slider__control--prev,
+  .slider__control .slider__control--next {
+    color: $c-purple;
+    &:hover {
+      color: $c-dark;
+
+      &::before {
+        width: 112.5%;
+        height: 112.5%;
+      }
+    }
+
+    &:focus {
+      color: $c-dark;
+      outline: none;
+
+      &::before {
+        border-color: $c-dark;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $c-dark;
+        border-color: $c-dark;
+      }
+    }
+  }
+}
+
+.cyan {
+  .social-block__toggler {
+    color: $d-blue;
+    &::before {
+      color: $c-light;
+    }
+
+    &:hover {
+      color: $l-blue;
+    }
+
+    &:focus {
+      color: $l-blue;
+      outline: none;
+
+      &::before {
+        border-color: $l-blue;
+      }
+    }
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $l-blue;
+        border-color: $l-blue;
+      }
+    }
+  }
+  .social-block__toggler--active {
+    color: $c-light;
+  }
+
+  .social-block__link:hover {
+    color: $l-blue;
+  }
+
+  .page-header__menu a {
+    &:hover,
+    &:focus {
+      color: $l-blue;
+      &::after {
+        background-color: $l-blue;
+      }
+    }
+  }
+  .slider__control,
+  .slider__control.slider__control--prev,
+  .slider__control.slider__control--next {
+    color: $d-blue;
+    &:hover {
+      color: $c-dark;
+
+      &::before {
+        width: 112.5%;
+        height: 112.5%;
+      }
+    }
+
+    &:focus {
+      color: $d-blue;
+      outline: none;
+
+      &::before {
+        border-color: $d-blue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $d-blue;
+        border-color: $d-blue;
+      }
+    }
+  }
+}
+
+.blue {
+  .social-block__toggler {
+    color: $l-blue;
+    &::before {
+      color: $c-light;
+    }
+
+    &:hover {
+      color: $d-blue;
+    }
+
+    &:focus {
+      color: $d-blue;
+      outline: none;
+
+      &::before {
+        border-color: $d-blue;
+      }
+    }
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $d-blue;
+        border-color: $d-blue;
+      }
+    }
+  }
+  .social-block__toggler--active {
+    color: $d-blue;
+  }
+
+  .social-block__link:hover {
+    color: $d-blue;
+  }
+
+  .page-header__menu a {
+    &:hover,
+    &:focus {
+      color: $d-blue;
+      &::after {
+        background-color: $d-blue;
+      }
+    }
+  }
+
+  .slider__control,
+  .slider__control .slider__control--prev,
+  .slider__control .slider__control--next {
+    color: $l-blue;
+    &:hover {
+      color: $c-dark;
+
+      &::before {
+        width: 112.5%;
+        height: 112.5%;
+      }
+    }
+    &:focus {
+      color: $l-blue;
+      outline: none;
+
+      &::before {
+        border-color: $l-blue;
+      }
+    }
+
+    &:active,
+    &:active:focus {
+      color: $c-light;
+
+      &::before {
+        background-color: $l-blue;
+        border-color: $l-blue;
       }
     }
   }
