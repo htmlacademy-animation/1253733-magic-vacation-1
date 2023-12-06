@@ -2957,7 +2957,7 @@ img {
   height: 4rem;
   color: #5f458c;
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateX(100%) rotate(90deg);
 }
 @media (min-width: 2000px) {
   .result__button span {
@@ -3822,7 +3822,7 @@ img {
 .swiper-slide-active .slider__item-text,
 .swiper-slide-next .slider__item-text {
   animation-name: textFadeIn;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
 }
@@ -3980,10 +3980,10 @@ img {
   }
 }
 .slider__control.slider__control--next {
-  transform: translateX(5rem) rotate(-180deg);
+  transform: translateX(5rem) rotate(180deg);
 }
 .slider__control.slider__control--prev {
-  transform: translateX(-5rem) rotate(180deg);
+  transform: translateX(-5rem) rotate(-180deg);
 }
 .slider__control:hover {
   color: #a67ee5;
@@ -4011,7 +4011,7 @@ img {
 .slider__control.swiper-button-disabled {
   opacity: 0;
   pointer-events: none;
-  transform: translateX(-5rem) rotate(180deg);
+  transform: translateX(-5rem) rotate(-180deg);
 }
 
 .slider__pagination.swiper-pagination {
@@ -4420,7 +4420,7 @@ img {
 }
 .active .result__button span {
   animation-name: transitionFromOpacity, buttonRotate;
-  animation-duration: 1s, 1s;
+  animation-duration: 2s, 2s;
   animation-delay: 0.6s, 0.6s;
   animation-fill-mode: forwards;
 }
@@ -4515,17 +4515,238 @@ img {
   animation-fill-mode: forwards, forwards;
 }
 
-.color-change .lilac .social-block__toggler {
+.lilac .social-block__toggler {
   color: #a67ee5;
 }
-.color-change .lilac .social-block__toggler:hover {
+.lilac .social-block__toggler::before {
+  color: #ffffff;
+}
+.lilac .social-block__toggler:hover {
+  color: #a67ee5;
+}
+.lilac .social-block__toggler:focus {
+  color: #a67ee5;
+  outline: none;
+}
+.lilac .social-block__toggler:focus::before {
+  border-color: #a67ee5;
+}
+.lilac .social-block__toggler:active, .lilac .social-block__toggler:active:focus {
+  color: #ffffff;
+}
+.lilac .social-block__toggler:active::before, .lilac .social-block__toggler:active:focus::before {
+  background-color: #a67ee5;
+  border-color: #a67ee5;
+}
+.lilac .social-block__toggler--active {
+  color: #a67ee5;
+}
+.lilac .social-block__link:hover {
   color: #5f458c;
 }
-.color-change .lilac .social-block__toggler:active::before {
+.lilac .page-header__menu a:hover, .lilac .page-header__menu a:focus {
   color: #5f458c;
 }
-.color-change .lilac .page-header__menu a:hover {
+.lilac .page-header__menu a:hover::after, .lilac .page-header__menu a:focus::after {
+  background-color: #5f458c;
+}
+.lilac .slider__control,
+.lilac .slider__control .slider__control--prev,
+.lilac .slider__control .slider__control--next {
+  color: #a67ee5;
+}
+.lilac .slider__control:hover,
+.lilac .slider__control .slider__control--prev:hover,
+.lilac .slider__control .slider__control--next:hover {
   color: #5f458c;
+}
+.lilac .slider__control:hover::before,
+.lilac .slider__control .slider__control--prev:hover::before,
+.lilac .slider__control .slider__control--next:hover::before {
+  width: 112.5%;
+  height: 112.5%;
+}
+.lilac .slider__control:focus,
+.lilac .slider__control .slider__control--prev:focus,
+.lilac .slider__control .slider__control--next:focus {
+  color: #5f458c;
+  outline: none;
+}
+.lilac .slider__control:focus::before,
+.lilac .slider__control .slider__control--prev:focus::before,
+.lilac .slider__control .slider__control--next:focus::before {
+  border-color: #5f458c;
+}
+.lilac .slider__control:active, .lilac .slider__control:active:focus,
+.lilac .slider__control .slider__control--prev:active,
+.lilac .slider__control .slider__control--prev:active:focus,
+.lilac .slider__control .slider__control--next:active,
+.lilac .slider__control .slider__control--next:active:focus {
+  color: #ffffff;
+}
+.lilac .slider__control:active::before, .lilac .slider__control:active:focus::before,
+.lilac .slider__control .slider__control--prev:active::before,
+.lilac .slider__control .slider__control--prev:active:focus::before,
+.lilac .slider__control .slider__control--next:active::before,
+.lilac .slider__control .slider__control--next:active:focus::before {
+  background-color: #5f458c;
+  border-color: #5f458c;
+}
+
+.cyan .social-block__toggler {
+  color: #007aff;
+}
+.cyan .social-block__toggler::before {
+  color: #ffffff;
+}
+.cyan .social-block__toggler:hover {
+  color: #b3deff;
+}
+.cyan .social-block__toggler:focus {
+  color: #b3deff;
+  outline: none;
+}
+.cyan .social-block__toggler:focus::before {
+  border-color: #b3deff;
+}
+.cyan .social-block__toggler:active, .cyan .social-block__toggler:active:focus {
+  color: #ffffff;
+}
+.cyan .social-block__toggler:active::before, .cyan .social-block__toggler:active:focus::before {
+  background-color: #b3deff;
+  border-color: #b3deff;
+}
+.cyan .social-block__toggler--active {
+  color: #ffffff;
+}
+.cyan .social-block__link:hover {
+  color: #b3deff;
+}
+.cyan .page-header__menu a:hover, .cyan .page-header__menu a:focus {
+  color: #b3deff;
+}
+.cyan .page-header__menu a:hover::after, .cyan .page-header__menu a:focus::after {
+  background-color: #b3deff;
+}
+.cyan .slider__control,
+.cyan .slider__control.slider__control--prev,
+.cyan .slider__control.slider__control--next {
+  color: #007aff;
+}
+.cyan .slider__control:hover,
+.cyan .slider__control.slider__control--prev:hover,
+.cyan .slider__control.slider__control--next:hover {
+  color: #5f458c;
+}
+.cyan .slider__control:hover::before,
+.cyan .slider__control.slider__control--prev:hover::before,
+.cyan .slider__control.slider__control--next:hover::before {
+  width: 112.5%;
+  height: 112.5%;
+}
+.cyan .slider__control:focus,
+.cyan .slider__control.slider__control--prev:focus,
+.cyan .slider__control.slider__control--next:focus {
+  color: #007aff;
+  outline: none;
+}
+.cyan .slider__control:focus::before,
+.cyan .slider__control.slider__control--prev:focus::before,
+.cyan .slider__control.slider__control--next:focus::before {
+  border-color: #007aff;
+}
+.cyan .slider__control:active, .cyan .slider__control:active:focus,
+.cyan .slider__control.slider__control--prev:active,
+.cyan .slider__control.slider__control--prev:active:focus,
+.cyan .slider__control.slider__control--next:active,
+.cyan .slider__control.slider__control--next:active:focus {
+  color: #ffffff;
+}
+.cyan .slider__control:active::before, .cyan .slider__control:active:focus::before,
+.cyan .slider__control.slider__control--prev:active::before,
+.cyan .slider__control.slider__control--prev:active:focus::before,
+.cyan .slider__control.slider__control--next:active::before,
+.cyan .slider__control.slider__control--next:active:focus::before {
+  background-color: #007aff;
+  border-color: #007aff;
+}
+
+.blue .social-block__toggler {
+  color: #b3deff;
+}
+.blue .social-block__toggler::before {
+  color: #ffffff;
+}
+.blue .social-block__toggler:hover {
+  color: #007aff;
+}
+.blue .social-block__toggler:focus {
+  color: #007aff;
+  outline: none;
+}
+.blue .social-block__toggler:focus::before {
+  border-color: #007aff;
+}
+.blue .social-block__toggler:active, .blue .social-block__toggler:active:focus {
+  color: #ffffff;
+}
+.blue .social-block__toggler:active::before, .blue .social-block__toggler:active:focus::before {
+  background-color: #007aff;
+  border-color: #007aff;
+}
+.blue .social-block__toggler--active {
+  color: #007aff;
+}
+.blue .social-block__link:hover {
+  color: #007aff;
+}
+.blue .page-header__menu a:hover, .blue .page-header__menu a:focus {
+  color: #007aff;
+}
+.blue .page-header__menu a:hover::after, .blue .page-header__menu a:focus::after {
+  background-color: #007aff;
+}
+.blue .slider__control,
+.blue .slider__control .slider__control--prev,
+.blue .slider__control .slider__control--next {
+  color: #b3deff;
+}
+.blue .slider__control:hover,
+.blue .slider__control .slider__control--prev:hover,
+.blue .slider__control .slider__control--next:hover {
+  color: #5f458c;
+}
+.blue .slider__control:hover::before,
+.blue .slider__control .slider__control--prev:hover::before,
+.blue .slider__control .slider__control--next:hover::before {
+  width: 112.5%;
+  height: 112.5%;
+}
+.blue .slider__control:focus,
+.blue .slider__control .slider__control--prev:focus,
+.blue .slider__control .slider__control--next:focus {
+  color: #b3deff;
+  outline: none;
+}
+.blue .slider__control:focus::before,
+.blue .slider__control .slider__control--prev:focus::before,
+.blue .slider__control .slider__control--next:focus::before {
+  border-color: #b3deff;
+}
+.blue .slider__control:active, .blue .slider__control:active:focus,
+.blue .slider__control .slider__control--prev:active,
+.blue .slider__control .slider__control--prev:active:focus,
+.blue .slider__control .slider__control--next:active,
+.blue .slider__control .slider__control--next:active:focus {
+  color: #ffffff;
+}
+.blue .slider__control:active::before, .blue .slider__control:active:focus::before,
+.blue .slider__control .slider__control--prev:active::before,
+.blue .slider__control .slider__control--prev:active:focus::before,
+.blue .slider__control .slider__control--next:active::before,
+.blue .slider__control .slider__control--next:active:focus::before {
+  background-color: #b3deff;
+  border-color: #b3deff;
 }
 
 /*# sourceMappingURL=style.min.css.map*/

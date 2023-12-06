@@ -10513,6 +10513,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FullPageScroll; });
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/throttle */ "./node_modules/lodash/throttle.js");
 /* harmony import */ var lodash_throttle__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_throttle__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./source/js/modules/utils.js");
+
+
 
 
 class FullPageScroll {
@@ -10567,6 +10570,7 @@ class FullPageScroll {
     this.changeVisibilityDisplay();
     this.changeActiveMenuItem();
     this.emitChangeDisplayEvent();
+    this.changeColorFirstHistoryScreen();
   }
 
   changeAllVisibilityScreen() {
@@ -10578,6 +10582,14 @@ class FullPageScroll {
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
+  }
+
+  changeColorFirstHistoryScreen() {
+    if (this.screenElements[this.activeScreen].id === `story` && this.storyDisplayTransition) {
+      _utils__WEBPACK_IMPORTED_MODULE_1__["body"].classList.add(`lilac`);
+    } else {
+      _utils__WEBPACK_IMPORTED_MODULE_1__["body"].classList.remove(..._utils__WEBPACK_IMPORTED_MODULE_1__["sliderColorChange"]);
+    }
   }
 
   changeVisibilityDisplay() {
@@ -10746,10 +10758,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./source/js/modules/utils.js");
+
+
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   window.addEventListener(`load`, function () {
-    let body = document.body;
-    body.classList.add(`active`);
+    _utils__WEBPACK_IMPORTED_MODULE_0__["body"].classList.add(`active`);
   });
 });
 
@@ -10766,27 +10780,25 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/js/swiper.esm.bundle.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils */ "./source/js/modules/utils.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
-  let sliderColorChange = [`lilac`, `cyan`, `blue`];
   let body = document.querySelector(`body`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
 
-  function changeColor(screen) {
-    body.classList.remove(...sliderColorChange);
-    if (screen !== `story`) {
-      return;
-    }
+  function changeColor() {
+    body.classList.remove(..._utils__WEBPACK_IMPORTED_MODULE_1__["sliderColorChange"]);
     if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
-      body.classList.add(sliderColorChange[0]);
+      body.classList.add(_utils__WEBPACK_IMPORTED_MODULE_1__["sliderColorChange"][0]);
     } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
-      body.classList.add(sliderColorChange[1]);
+      body.classList.add(_utils__WEBPACK_IMPORTED_MODULE_1__["sliderColorChange"][1]);
     } else if (storySlider.activeIndex === 4 || storySlider.activeIndex === 5) {
-      body.classList.add(sliderColorChange[2]);
+      body.classList.add(_utils__WEBPACK_IMPORTED_MODULE_1__["sliderColorChange"][2]);
     }
   }
 
@@ -10812,7 +10824,7 @@ __webpack_require__.r(__webpack_exports__);
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
             }
-            changeColor(screen);
+            changeColor();
           },
           resize: () => {
             storySlider.update();
@@ -10847,6 +10859,7 @@ __webpack_require__.r(__webpack_exports__);
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
+            changeColor();
           },
           resize: () => {
             storySlider.update();
@@ -10893,6 +10906,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./source/js/modules/utils.js":
+/*!************************************!*\
+  !*** ./source/js/modules/utils.js ***!
+  \************************************/
+/*! exports provided: body, sliderColorChange */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "body", function() { return body; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sliderColorChange", function() { return sliderColorChange; });
+const body = document.querySelector(`body`);
+const sliderColorChange = [`lilac`, `cyan`, `blue`];
+
+
+/***/ }),
+
 /***/ "./source/js/script.js":
 /*!*****************************!*\
   !*** ./source/js/script.js ***!
@@ -10914,6 +10944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_screenLoading_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/screenLoading.js */ "./source/js/modules/screenLoading.js");
 /* harmony import */ var _modules_accentTypographyBuild_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/accentTypographyBuild.js */ "./source/js/modules/accentTypographyBuild.js");
 // modules
+
 
 
 
