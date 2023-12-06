@@ -11,6 +11,7 @@ import FullPageScroll from './modules/full-page-scroll';
 import screenLoading from './modules/screenLoading.js';
 import AccentTypographyBuild from './modules/accentTypographyBuild.js';
 
+
 // init modules
 mobileHeight();
 slider();
@@ -45,5 +46,4 @@ const animationTopTitlePrize = new AccentTypographyBuild(`.prizes__title`, 500, 
 setTimeout(()=>{
   animationTopTitlePrize.runAnimation();
 }, 500);
-
 

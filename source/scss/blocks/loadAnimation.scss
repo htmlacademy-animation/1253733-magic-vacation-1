@@ -13,7 +13,10 @@
   }
 
   .screen__footer {
-    transform: translateY(0%);
+    animation-name: moveToUp;
+    animation-duration: $middleAnimation;
+    animation-delay: $shotAnimation;
+    animation-fill-mode: forwards;
   }
 
   .page-header__nav {
@@ -83,12 +86,25 @@
       animation-delay: 1s, 1s;
     }
   }
-  .rules__link {
+  .rules__link::before {
     animation-name: transitionFromOpacity, growSizeTransition,
       transitionСolorBtn;
     animation-duration: $middleAnimation, $middleAnimation, $middleAnimation;
     animation-delay: 1.3s, 1.3s, 2s;
     animation-fill-mode: forwards;
+  }
+
+  .result__button {
+    animation-name: transitionFromOpacity;
+    animation-duration: $middleAnimation;
+    animation-fill-mode: forwards;
+
+    span {
+      animation-name: transitionFromOpacity, buttonRotate;
+      animation-duration: 2s, 2s;
+      animation-delay: 0.6s, 0.6s;
+      animation-fill-mode: forwards;
+    }
   }
 
   .title-wordgap {
@@ -110,6 +126,28 @@
       animation-name: moveToRight;
       animation-duration: $middleAnimation;
       animation-fill-mode: forwards;
+      animation-timing-function: $smooth;
+    }
+  }
+
+  .slider__control {
+    &.slider__control--next,
+    &.slider__control--prev,
+    &.swiper-button-disabled {
+      animation-name: transitionFromOpacity, buttonRotate;
+      animation-delay: 0.8s;
+      animation-duration: $shotAnimation, $shotAnimation;
+      animation-fill-mode: forwards, forwards;
+      animation-timing-function: $smooth, $smooth;
+    }
+  }
+
+  .disclaimer {
+    a {
+      animation-name: transitionFromOpacity;
+      animation-duration: $middleAnimation;
+      animation-fill-mode: forwards;
+      animation-timing-function: $smooth;
     }
   }
 }

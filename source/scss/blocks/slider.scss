@@ -69,7 +69,7 @@
 .swiper-slide-next {
   .slider__item-text {
     animation-name: textFadeIn;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
 
@@ -170,6 +170,7 @@
 
 .slider__control {
   @include btn-reset;
+  opacity: 0;
   position: relative;
   width: 4rem;
   height: 4rem;
@@ -204,6 +205,13 @@
     }
   }
 
+  &.slider__control--next {
+    transform: translateX(5rem) rotate(180deg);
+  }
+  &.slider__control--prev {
+    transform: translateX(-5rem) rotate(-180deg);
+  }
+
   &:hover {
     color: $c-purple;
 
@@ -235,8 +243,9 @@
   }
 
   &.swiper-button-disabled {
-    opacity: 0.5;
+    opacity: 0;
     pointer-events: none;
+    transform: translateX(-5rem) rotate(-180deg);
   }
 }
 
